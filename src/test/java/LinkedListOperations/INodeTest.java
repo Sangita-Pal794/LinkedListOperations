@@ -16,8 +16,25 @@ public class INodeTest<T> {
         myFirstNode.setNext(mySecondNode);
         mySecondNode.setNext(myThirdNode);
 
-        //checking if next nodes are set as expected
+        //check if next nodes are set (as expected)
         boolean result = myFirstNode.getNext().equals(mySecondNode) && mySecondNode.getNext().equals(myThirdNode);
+        Assert.assertTrue(result);
+    }
+    
+    @Test
+    public void given3Numbers_WhenAddedToLinkedList_ShouldBeAddedToTop() {
+        //initialize node objects
+        INode<Integer> myFirstNode = new  INode<>(70);
+        INode<Integer> mySecondNode = new INode<>(30);
+        INode<Integer> myThirdNode = new  INode<>(56);
+
+        //create a linked list
+        MyLinkedList myLinkedList = new MyLinkedList();
+        //add nodes to the linked list
+        myLinkedList.add(myFirstNode);
+        myLinkedList.add(mySecondNode);
+        myLinkedList.add(myThirdNode);
+        boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.tail.equals(myFirstNode);
         Assert.assertTrue(result);
     }
 }

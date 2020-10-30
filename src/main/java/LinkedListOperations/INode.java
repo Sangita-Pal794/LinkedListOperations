@@ -1,6 +1,6 @@
 package LinkedListOperations;
 
-public class INode<T> {
+public class INode<T> implements MyNode<T>{
 	
 	private T key;
     private INode next;
@@ -10,6 +10,17 @@ public class INode<T> {
         this.next = null;
     }
 
+  //implementation of methods from INode interface
+    @Override
+    public T getKey() {
+        return key;
+    }
+
+    @Override
+    public void setKey(T key) {
+        this.key = key;
+    }
+    
     //getter and setter methods for next
     public INode getNext() {
         return next;
