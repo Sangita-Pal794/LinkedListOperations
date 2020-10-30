@@ -22,8 +22,18 @@ public class MyLinkedList {
         	//make head point to the new node
         	this.head = newNode;        
         	// node next to node being pointed by head is set to the old node
-        	this.head.setNext(tempNode); 
+        	this.head.setNext(tempNode);
         }
+       }
 
+        public void append(MyNode newNode) {
+            if(this.head == null && this.tail == null) {
+                this.head = newNode;
+                this.tail = newNode;
+            }
+            else {
+                this.tail.setNext(newNode);
+                this.tail = newNode;
+            }
     }
 }

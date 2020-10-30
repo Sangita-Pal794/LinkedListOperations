@@ -2,8 +2,8 @@ package LinkedListOperations;
 
 public class INode<T> implements MyNode<T>{
 	
-	private T key;
-    private INode next;
+	public T key;
+    public MyNode next;
 
     public INode(T key) {
         this.key = key;
