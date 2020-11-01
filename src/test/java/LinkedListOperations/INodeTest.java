@@ -108,5 +108,21 @@ public class INodeTest<T> {
         Assert.assertEquals(myThirdNode,  result);
     }
 
+    @Test
+    public void given3NumbersInList_WhenWithMatchingValueOfSearchNode_ShouldReturnTrue() {
+        //initialise node objects
+        INode<Integer> myFirstNode = new INode<>(56);
+        INode<Integer> mySecondNode = new INode<>(30);
+        INode<Integer> myThirdNode = new INode<>(70);
+        //create a linked list
+        MyLinkedList myLinkedList = new MyLinkedList();
+        //add nodes to the linked list
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        //check if node with value 30 is present
+        boolean result = myLinkedList.search(mySecondNode);
+        Assert.assertTrue(result);
+    }
 }
 

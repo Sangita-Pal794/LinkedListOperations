@@ -58,4 +58,16 @@ public class MyLinkedList {
             tempNode = tempNode.getNext();       //make tempNode store tail
             return tempNode;
         }
+        
+        public boolean search(MyNode searchnode) {
+            MyNode tempNode = this.head;
+            while (tempNode != searchnode && tempNode.getNext() != this.tail){
+                tempNode = tempNode.getNext();
+            }
+            if (tempNode == searchnode)
+                return true;
+            else
+                return false;
+
+        }
     }
