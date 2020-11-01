@@ -43,9 +43,19 @@ public class MyLinkedList {
             newNode.setNext(tempNode);          //make new node point to tempNode (containing latter node)
         }
         
-        public INode pop() {
-            INode tempNode = this.head;         //store head in tempNode
+        public MyNode pop() {
+            MyNode tempNode = this.head;         //store head in tempNode
             this.head = head.getNext();         //set head to point to next node after head
+            return tempNode;
+        }
+        
+        public MyNode popLast(){
+            MyNode tempNode = this.head;
+            while (!tempNode.getNext().equals(tail)) {
+                tempNode = tempNode.getNext();    //set tempNode to successive nodes
+            }
+            this.tail = tempNode;                //make tail store tempNode(which is storing last element before tail)
+            tempNode = tempNode.getNext();       //make tempNode store tail
             return tempNode;
         }
     }
