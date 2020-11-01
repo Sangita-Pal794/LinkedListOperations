@@ -72,5 +72,24 @@ public class INodeTest<T> {
         boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.tail.equals(myThirdNode);
         Assert.assertTrue(result);
     }
+    
+    @Test
+    public void given3NumbersInList_AfterDeleting1stElement_ShouldHave2ndElementAtHead() {
+        //initialise node objects
+        INode<Integer> myFirstNode = new INode<>(56);
+        INode<Integer> mySecondNode = new INode<>(30);
+        INode<Integer> myThirdNode = new INode<>(70);
+        //create a linked list
+        MyLinkedList myLinkedList = new MyLinkedList();
+        //add nodes to the linked list
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        //delete first element
+        myLinkedList.pop();
+        boolean result = myLinkedList.head.equals(mySecondNode);
+        Assert.assertTrue(result);
+    }
+
 }
 

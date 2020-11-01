@@ -42,4 +42,10 @@ public class MyLinkedList {
             myNode.setNext(newNode);            // make former node point to new node
             newNode.setNext(tempNode);          //make new node point to tempNode (containing latter node)
         }
+        
+        public INode pop() {
+            INode tempNode = this.head;         //store head in tempNode
+            this.head = head.getNext();         //set head to point to next node after head
+            return tempNode;
+        }
     }
