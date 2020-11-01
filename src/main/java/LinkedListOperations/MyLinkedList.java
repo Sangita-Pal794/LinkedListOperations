@@ -77,4 +77,18 @@ public class MyLinkedList {
             }
             return tempNode;
         }
+        
+        public int size() {                         //calculates size of linked list
+            int size = 0;
+            if (this.head == null)
+                return size;
+            else
+                size = 1;
+            MyNode tempNode = this.head;
+            while (tempNode.getNext() != null ) {
+                tempNode = tempNode.getNext();
+                size++;
+            }
+            return size;
+        }
     }

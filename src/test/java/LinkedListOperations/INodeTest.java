@@ -146,5 +146,28 @@ public class INodeTest<T> {
         boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.head.getNext().getNext().equals(myInsertionNode) && myLinkedList.tail.equals(myThirdNode);
         Assert.assertTrue(result);
     }
+    
+    @Test
+    public void givenLinkedList_AfterDeletingANode_ShouldReturnExpectedListSize() {
+        //initialise node objects
+        INode<Integer> myFirstNode = new INode<>(56);
+        INode<Integer> mySecondNode = new INode<>(30);
+        INode<Integer> myThirdNode = new INode<>(40);
+        INode<Integer> myFourthNode = new INode<>(70);
+        //create a linked list
+        MyLinkedList myLinkedList = new MyLinkedList();
+        //add nodes to the linked list
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.append(myFourthNode);
+        //search node with key 40
+        MyNode searchNode = myLinkedList.index(40);
+        //delete node and get modified list's head
+        MyNode startNode = myLinkedList.remove(searchNode);
+        //calculate size of new list
+        int size = myLinkedList.size();
+        Assert.assertEquals(3 , size);
+    }
 }
 
