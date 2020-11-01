@@ -124,5 +124,27 @@ public class INodeTest<T> {
         boolean result = myLinkedList.search(mySecondNode);
         Assert.assertTrue(result);
     }
+    
+    @Test
+    public void givenLinkedList_WhenInsertingNodeInSpecificPosition_ShouldPassLinkedListTest() {
+        //initialise node objects
+        INode<Integer> myFirstNode = new INode<>(56);
+        INode<Integer> mySecondNode = new INode<>(30);
+        INode<Integer> myThirdNode = new INode<>(70);
+        INode<Integer> myInsertionNode = new INode<>(40);
+        //create a linked list
+        MyLinkedList myLinkedList = new MyLinkedList();
+        //add nodes to the linked list
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        //search node with key 30
+        MyNode searchNode = myLinkedList.index(30);
+        //call insert method , pass search node reference and insertion node
+        myLinkedList.insert(searchNode , myInsertionNode);
+        //check if nodes of linked list are in the order expected
+        boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.head.getNext().getNext().equals(myInsertionNode) && myLinkedList.tail.equals(myThirdNode);
+        Assert.assertTrue(result);
+    }
 }
 

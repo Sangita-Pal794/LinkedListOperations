@@ -68,6 +68,13 @@ public class MyLinkedList {
                 return true;
             else
                 return false;
-
+        }
+        
+        public <E> MyNode index(E searchKey) {
+            MyNode tempNode = this.head;
+            while (tempNode.getKey() != searchKey) {
+                tempNode = tempNode.getNext();
+            }
+            return tempNode;
         }
     }
