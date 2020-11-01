@@ -36,4 +36,10 @@ public class MyLinkedList {
                 this.tail = newNode;
             }
     }
-}
+
+        public void insert(MyNode myNode , MyNode newNode) {
+            MyNode tempNode = myNode.getNext();  //store the latter node in tempNode
+            myNode.setNext(newNode);            // make former node point to new node
+            newNode.setNext(tempNode);          //make new node point to tempNode (containing latter node)
+        }
+    }

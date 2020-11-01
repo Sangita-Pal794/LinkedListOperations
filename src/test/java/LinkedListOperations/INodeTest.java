@@ -54,5 +54,23 @@ public class INodeTest<T> {
         boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.tail.equals(myThirdNode);
         Assert.assertTrue(result);
     }
+    
+    
+    @Test
+    public void given3Numbers_WhenInserting2ndInBetween_ShouldPassLinkedListTest() {
+        //initialise node objects
+        INode<Integer> myFirstNode =  new  INode<>(70);
+        INode<Integer> mySecondNode = new INode<>(30);
+        INode<Integer> myThirdNode =  new  INode<>(56);
+
+        //create a linked list
+        MyLinkedList myLinkedList = new MyLinkedList();
+        //add nodes to the linked list
+        myLinkedList.add(myFirstNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.insert(myFirstNode , mySecondNode);
+        boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.tail.equals(myThirdNode);
+        Assert.assertTrue(result);
+    }
 }
 
