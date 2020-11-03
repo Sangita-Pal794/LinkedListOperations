@@ -64,8 +64,9 @@ public class MyLinkedList {
             while (tempNode != searchnode && tempNode.getNext() != this.tail){
                 tempNode = tempNode.getNext();
             }
-            if (tempNode == searchnode)
-                return true;
+            
+	    if (tempNode == searchnode)
+                return tempNode;
             else
                 return false;
         }
