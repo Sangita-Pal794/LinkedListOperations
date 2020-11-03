@@ -66,7 +66,7 @@ public class MyLinkedList {
             }
             
 	    if (tempNode == searchnode)
-                return tempNode;
+                return true;
             else
                 return false;
         }
